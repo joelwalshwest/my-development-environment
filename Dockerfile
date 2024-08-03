@@ -1,4 +1,6 @@
-FROM anatolelucet/neovim:stable
+# FROM anatolelucet/neovim:stable
+
+FROM alpine:latest AS nvim
 
 # Install required packages
 RUN apk add --no-cache --update \
@@ -10,9 +12,17 @@ RUN apk add --no-cache --update \
         build-base \
         wget
 
+RUN  git config --global user.email "joelwalshwest@gmail.com"
+RUN  git config --global user.name = "Joel Walshwest"
+
 RUN mkdir -p /root/.config/nvim
+
+RUN git clone --depth 1 https://github.com/wbthomason/packer.nvim /root/.local/share/nvim/site/pack/packer/start/packer.nvim
+
 COPY ./nvim /root/.config/nvim
-# RUN nvim --headless -c "MasonInstallAll" -c "quitall"
+
+RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+RUN nvim --headless -c 'TSUpdateSync' -c 'sleep 20' -c 'qa'
 
 WORKDIR /root/.config/nvim
 
