@@ -34,5 +34,16 @@ return require('packer').startup(function(use)
 
   -- fugitive
   use('tpope/vim-fugitive')
+
+  -- lsp
+  use('VonHeikemen/lsp-zero.nvim')
+  use('neovim/nvim-lspconfig')
+  use('hrsh7th/cmp-nvim-lsp')
+  use('hrsh7th/nvim-cmp')
+
+  -- debug
+  use('mfussenegger/nvim-dap')
+  use('mfussenegger/nvim-dap-python')
+  use({ "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} })
 end)
 
