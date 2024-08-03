@@ -14,6 +14,11 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  use {
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  }
+
   -- catppuccin
   use ({ 
 	  "catppuccin/nvim", 
@@ -57,6 +62,7 @@ return require('packer').startup(function(use)
     "antoinemadec/FixCursorHold.nvim",
     "nvim-treesitter/nvim-treesitter"
   }
+
 }
 end)
 
