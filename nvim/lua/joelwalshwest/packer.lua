@@ -45,5 +45,18 @@ return require('packer').startup(function(use)
   use('mfussenegger/nvim-dap')
   use('mfussenegger/nvim-dap-python')
   use({ "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} })
+  use('HiPhish/debugpy.nvim')
+
+  -- neotest
+ use {
+  "nvim-neotest/neotest",
+  requires = {
+    "nvim-neotest/nvim-nio",
+    "nvim-neotest/neotest-python",
+    "nvim-lua/plenary.nvim",
+    "antoinemadec/FixCursorHold.nvim",
+    "nvim-treesitter/nvim-treesitter"
+  }
+}
 end)
 
