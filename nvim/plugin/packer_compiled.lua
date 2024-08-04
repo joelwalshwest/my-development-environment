@@ -84,6 +84,17 @@ _G.packer_plugins = {
     path = "/root/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
     url = "https://github.com/antoinemadec/FixCursorHold.nvim"
   },
+  ["auto-save.nvim"] = {
+    config = { "\27LJ\2\n\16\0\0\1\0\1\0\2'\0\0\0L\0\2\0\5’\1\1\0\5\0\n\0\0146\0\0\0'\2\1\0B\0\2\0016\0\2\0'\2\3\0B\0\2\0029\0\4\0005\2\5\0005\3\a\0003\4\6\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\22execution_message\fmessage\1\0\3\22cleaning_interval\3‚\t\bdim\4äÆèÖ\aΩîú˛\3\fmessage\0\0\1\0\2\fenabled\2\22execution_message\0\nsetup\14auto-save\frequire\18config called\nprint\0" },
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/auto-save.nvim",
+    url = "https://github.com/Pocco81/auto-save.nvim"
+  },
+  ["black-nvim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/black-nvim",
+    url = "https://github.com/averms/black-nvim"
+  },
   catppuccin = {
     config = { "\27LJ\2\n:\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\27colorscheme catppuccin\bcmd\bvim\0" },
     loaded = true,
@@ -99,6 +110,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/debugpy.nvim",
     url = "https://github.com/HiPhish/debugpy.nvim"
+  },
+  ["formatter.nvim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/formatter.nvim",
+    url = "https://github.com/mhartington/formatter.nvim"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -199,6 +215,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: auto-save.nvim
+time([[Config for auto-save.nvim]], true)
+try_loadstring("\27LJ\2\n\16\0\0\1\0\1\0\2'\0\0\0L\0\2\0\5’\1\1\0\5\0\n\0\0146\0\0\0'\2\1\0B\0\2\0016\0\2\0'\2\3\0B\0\2\0029\0\4\0005\2\5\0005\3\a\0003\4\6\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\22execution_message\fmessage\1\0\3\22cleaning_interval\3‚\t\bdim\4äÆèÖ\aΩîú˛\3\fmessage\0\0\1\0\2\fenabled\2\22execution_message\0\nsetup\14auto-save\frequire\18config called\nprint\0", "config", "auto-save.nvim")
+time([[Config for auto-save.nvim]], false)
 -- Config for: nvim-dap-ui
 time([[Config for nvim-dap-ui]], true)
 try_loadstring("\27LJ\2\n\30\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\1¿\topen\31\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\1¿\nclose\31\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\1¿\nclose…\1\1\0\4\0\r\0\0256\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0029\2\3\1B\2\1\0019\2\4\0009\2\5\0029\2\6\0023\3\b\0=\3\a\0029\2\4\0009\2\t\0029\2\6\0023\3\n\0=\3\a\0029\2\4\0009\2\t\0029\2\v\0023\3\f\0=\3\a\0022\0\0ÄK\0\1\0\0\17event_exited\0\vbefore\0\17dapui_config\22event_initialized\nafter\14listeners\nsetup\ndapui\bdap\frequire\0", "config", "nvim-dap-ui")

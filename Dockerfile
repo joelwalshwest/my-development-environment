@@ -15,7 +15,7 @@ RUN apk add --no-cache --update \
         py3-pip 
 
 RUN python -m venv /my-venv
-RUN /my-venv/bin/pip install --no-cache-dir debugpy
+RUN /my-venv/bin/pip install --no-cache-dir debugpy black
 ENV PATH="/my-venv/bin:$PATH"
 
 RUN  git config --global user.email "joelwalshwest@gmail.com"

@@ -4,6 +4,24 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+  -- formatting
+  use({
+    "Pocco81/auto-save.nvim",
+    config = function()
+      print("config called")
+      require("auto-save").setup {
+        enabled = true, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
+        execution_message = {
+          message = function() -- message to print on save
+              return ""
+          end,
+          dim = 0.18, -- dim the color of `message`
+          cleaning_interval = 1250, -- (milliseconds) automatically clean MsgArea after displaying `message`. See :h MsgArea
+        },
+      }
+    end,
+  })
+
   -- terminal
   use "numToStr/FTerm.nvim"
   use 'voldikss/vim-floaterm'
