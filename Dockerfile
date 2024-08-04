@@ -15,13 +15,13 @@ RUN apk add --no-cache --update \
         py3-pip 
 
 RUN python -m venv /my-venv
-RUN /my-venv/bin/pip install --no-cache-dir debugpy black
+RUN /my-venv/bin/pip install --no-cache-dir debugpy black 
 ENV PATH="/my-venv/bin:$PATH"
 
 RUN  git config --global user.email "joelwalshwest@gmail.com"
 RUN  git config --global user.name = "Joel Walshwest"
 
-RUN npm i -g pyright
+RUN npm i -g pyright lua-fmt
 RUN mkdir -p /root/.config/nvim
 
 RUN git clone --depth 1 https://github.com/wbthomason/packer.nvim /root/.local/share/nvim/site/pack/packer/start/packer.nvim
