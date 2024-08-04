@@ -6,4 +6,6 @@ require("joelwalshwest.debug")
 require("joelwalshwest.debugpy")
 require("joelwalshwest.neotest")
 require("joelwalshwest.neotest-python")
+require("joelwalshwest.gitsigns")
+require("joelwalshwest.floatterm")
 
