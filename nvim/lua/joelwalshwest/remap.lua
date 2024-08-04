@@ -1,5 +1,21 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<Space>", "<Nop>", {noremap = true, silent = true})
+vim.keymap.set("v", "<Space>", "<Nop>", {noremap = true, silent = true})
+
+-- movement
+vim.keymap.set("n", "H", "^")
+vim.keymap.set("n", "L", "$")
+vim.keymap.set("n", "{", "[mzz")
+vim.keymap.set("n", "}", "]mzz")
+
+-- pasting
+vim.keymap.set("n", "<leader>p", '"_dP', {noremap = true, silent = true})
+
+-- searching
+vim.keymap.set("n", "<leader>h", ":set hls!<CR>")
+vim.keymap.set("c", "<c-j>", "<c-g>")
+vim.keymap.set("c", "<c-k>", "<c-t>")
+vim.keymap.set("n", "*", "``/<up><c-t>")
 
 -- saving
 vim.keymap.set("n", "<leader>w", ":w<CR>")

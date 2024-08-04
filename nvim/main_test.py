@@ -1,7 +1,10 @@
 import unittest
 
+
 class TestClass(unittest.TestCase):
     def test_thing(self):
+        test = "lskjf"
+        print(test)
         print("hello")
         self.assertEqual(1, 1)
 
@@ -11,4 +14,3 @@ class TestClass(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

@@ -1,6 +1,6 @@
 # FROM anatolelucet/neovim:stable
 
-FROM alpine:latest AS nvim
+FROM alpine:latest
 
 # Install required packages
 RUN apk add --no-cache --update \

@@ -85,7 +85,7 @@ _G.packer_plugins = {
     url = "https://github.com/antoinemadec/FixCursorHold.nvim"
   },
   ["auto-save.nvim"] = {
-    config = { "\27LJ\2\n\16\0\0\1\0\1\0\2'\0\0\0L\0\2\0\5“\2\1\0\5\0\f\0\0166\0\0\0'\2\1\0B\0\2\0016\0\2\0'\2\3\0B\0\2\0029\0\4\0005\2\6\0005\3\5\0=\3\a\0025\3\t\0003\4\b\0=\4\n\3=\3\v\2B\0\2\1K\0\1\0\22execution_message\fmessage\1\0\3\22cleaning_interval\3â\t\bdim\4Š®…\a½”œş\3\fmessage\0\0\19trigger_events\1\0\3\22execution_message\0\19trigger_events\0\fenabled\2\1\3\0\0\rBufLeave\14FocusLost\nsetup\14auto-save\frequire\18config called\nprint\0" },
+    config = { "\27LJ\2\n\16\0\0\1\0\1\0\2'\0\0\0L\0\2\0\5ó\1\1\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\a\0003\4\6\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\22execution_message\fmessage\1\0\3\22cleaning_interval\3â\t\bdim\4Š®…\a½”œş\3\fmessage\0\0\19trigger_events\1\0\3\fenabled\2\22execution_message\0\19trigger_events\0\1\3\0\0\rBufLeave\14FocusLost\nsetup\14auto-save\frequire\0" },
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/auto-save.nvim",
     url = "https://github.com/Pocco81/auto-save.nvim"
@@ -220,7 +220,7 @@ try_loadstring("\27LJ\2\n\30\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\1À\tope
 time([[Config for nvim-dap-ui]], false)
 -- Config for: auto-save.nvim
 time([[Config for auto-save.nvim]], true)
-try_loadstring("\27LJ\2\n\16\0\0\1\0\1\0\2'\0\0\0L\0\2\0\5“\2\1\0\5\0\f\0\0166\0\0\0'\2\1\0B\0\2\0016\0\2\0'\2\3\0B\0\2\0029\0\4\0005\2\6\0005\3\5\0=\3\a\0025\3\t\0003\4\b\0=\4\n\3=\3\v\2B\0\2\1K\0\1\0\22execution_message\fmessage\1\0\3\22cleaning_interval\3â\t\bdim\4Š®…\a½”œş\3\fmessage\0\0\19trigger_events\1\0\3\22execution_message\0\19trigger_events\0\fenabled\2\1\3\0\0\rBufLeave\14FocusLost\nsetup\14auto-save\frequire\18config called\nprint\0", "config", "auto-save.nvim")
+try_loadstring("\27LJ\2\n\16\0\0\1\0\1\0\2'\0\0\0L\0\2\0\5ó\1\1\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\a\0003\4\6\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\22execution_message\fmessage\1\0\3\22cleaning_interval\3â\t\bdim\4Š®…\a½”œş\3\fmessage\0\0\19trigger_events\1\0\3\fenabled\2\22execution_message\0\19trigger_events\0\1\3\0\0\rBufLeave\14FocusLost\nsetup\14auto-save\frequire\0", "config", "auto-save.nvim")
 time([[Config for auto-save.nvim]], false)
 
 _G._packer.inside_compile = false
