@@ -67,8 +67,16 @@ return require("packer").startup(
         -- undotree
         use("mbbill/undotree")
 
-        -- fugitive
-        use("tpope/vim-fugitive")
+        -- lazygit
+        use(
+            {
+                "kdheepak/lazygit.nvim",
+                -- optional for floating window border decoration
+                requires = {
+                    "nvim-lua/plenary.nvim"
+                }
+            }
+        )
 
         use("lewis6991/gitsigns.nvim")
 

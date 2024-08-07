@@ -17,7 +17,7 @@ telescope = require("telescope")
 vim.keymap.set("n", "<leader>e", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
 vim.keymap.set("n", "<leader>o", builtin.find_files, {})
 vim.keymap.set("n", "<leader>O", builtin.find_files, {})
-vim.keymap.set("n", "<leader>H", builtin.git_files, {})
+vim.keymap.set("n", "<leader>h", builtin.git_files, {})
 vim.keymap.set(
     "n",
     "<leader>l",

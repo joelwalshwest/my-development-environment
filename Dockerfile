@@ -4,6 +4,7 @@ FROM alpine:latest
 
 # Install required packages
 RUN apk add --no-cache --update \
+        lazygit \
         npm \
         git \
         nodejs \

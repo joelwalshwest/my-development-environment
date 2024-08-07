@@ -2,6 +2,9 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<Space>", "<Nop>", {noremap = true, silent = true})
 vim.keymap.set("v", "<Space>", "<Nop>", {noremap = true, silent = true})
 
+-- lazygit
+vim.keymap.set("n", "<leader>H", ":LazyGit<CR>")
+
 -- movement
 vim.keymap.set("n", "H", "^")
 vim.keymap.set("n", "L", "$")
