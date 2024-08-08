@@ -4,6 +4,7 @@ FROM alpine:latest
 
 # Install required packages
 RUN apk add --no-cache --update \
+        bash \
         lazygit \
         npm \
         git \
@@ -23,18 +24,16 @@ RUN  git config --global user.email "joelwalshwest@gmail.com"
 RUN  git config --global user.name = "Joel Walshwest"
 
 RUN npm i -g pyright lua-fmt
-RUN mkdir -p /root/.config/nvim
 
 RUN git clone --depth 1 https://github.com/wbthomason/packer.nvim /root/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 COPY ./nvim /root/.config/nvim
+COPY ./lazygit /root/.config/lazygit
+COPY ./bash/.bashrc /root/.bashrc
 
 RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-RUN nvim --headless -c 'TSUpdateSync' -c 'sleep 20' -c 'qa'
+RUN nvim --headless -c 'TSUpdateSync' -c 'sleep 5' -c 'qa'
 
-WORKDIR /root/.config/nvim
+WORKDIR /root/
 
-CMD ["nvim"]
-
-# Build container with: docker build -t my-development-environment-nvim . 
-# Run container with:  docker run -it -v $(pwd)/nvim:/root/.config/nvim my-development-environment-nvim
+CMD ["/bin/bash"]

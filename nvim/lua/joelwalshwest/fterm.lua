@@ -4,7 +4,7 @@ require'FTerm'.setup({
         height = 0.9,
         width = 0.9,
     },
-    cmd = "/bin/sh"
+    cmd = "/bin/bash"
 })
 
 vim.keymap.set('n', '<leader>t', '<CMD>lua require("FTerm").toggle()<CR>')

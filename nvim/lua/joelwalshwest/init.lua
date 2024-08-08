@@ -8,5 +8,6 @@ require("joelwalshwest.neotest")
 require("joelwalshwest.neotest-python")
 require("joelwalshwest.gitsigns")
 require("joelwalshwest.floatterm")
+require("joelwalshwest.fterm")
 require("joelwalshwest.formatter")
 
