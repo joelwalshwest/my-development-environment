@@ -67,17 +67,13 @@ return require("packer").startup(
         -- undotree
         use("mbbill/undotree")
 
-        -- lazygit
-        use(
-            {
-                "kdheepak/lazygit.nvim",
-                -- optional for floating window border decoration
-                requires = {
-                    "nvim-lua/plenary.nvim"
-                }
-            }
-        )
+        -- lualine
+        use {
+            "nvim-lualine/lualine.nvim",
+            requires = {"nvim-tree/nvim-web-devicons", opt = true}
+        }
 
+        -- gitsigns
         use("lewis6991/gitsigns.nvim")
 
         -- lsp

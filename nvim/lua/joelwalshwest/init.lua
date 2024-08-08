@@ -10,4 +10,4 @@ require("joelwalshwest.gitsigns")
 require("joelwalshwest.floatterm")
 require("joelwalshwest.fterm")
 require("joelwalshwest.formatter")
-
+require("joelwalshwest.lualine")
