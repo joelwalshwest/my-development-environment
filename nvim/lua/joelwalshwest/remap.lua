@@ -105,5 +105,5 @@ vim.api.nvim_create_user_command("BNext", next_buffer, {})
 vim.api.nvim_create_user_command("BPrev", prev_buffer, {})
 
 -- Key mappings
-vim.api.nvim_set_keymap("n", "<c-k>", ":BNext<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<c-j>", ":BPrev<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<c-k>", ":BF<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<c-j>", ":BB<CR>", {noremap = true, silent = true})

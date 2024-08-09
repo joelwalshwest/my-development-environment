@@ -16,6 +16,11 @@ RUN apk add --no-cache --update \
         python3 \
         py3-pip 
 
+RUN wget -P /root/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/SourceCodePro.zip \
+        && cd /root/.local/share/fonts \
+        && unzip SourceCodePro.zip \
+        && rm SourceCodePro.zip 
+
 RUN python -m venv /my-venv
 RUN /my-venv/bin/pip install --no-cache-dir debugpy black 
 ENV PATH="/my-venv/bin:$PATH"

@@ -5,6 +5,20 @@ vim.cmd [[packadd packer.nvim]]
 
 return require("packer").startup(
     function(use)
+        -- neotree
+        use {
+            "nvim-neo-tree/neo-tree.nvim",
+            branch = "v3.x",
+            requires = {
+                "nvim-lua/plenary.nvim",
+                "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+                "MunifTanjim/nui.nvim"
+            }
+        }
+
+        -- bufkill
+        use "qpkorr/vim-bufkill"
+
         -- formatting
         use(
             {
