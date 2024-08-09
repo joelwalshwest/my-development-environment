@@ -25,6 +25,20 @@ vim.keymap.set(
 )
 vim.keymap.set(
     "n",
+    "<leader>dD",
+    function()
+        dap.disconnect()
+    end
+)
+vim.keymap.set(
+    "n",
+    "<leader>dS",
+    function()
+        dap.terminate()
+    end
+)
+vim.keymap.set(
+    "n",
     "<leader>do",
     function()
         dap.step_over()
@@ -46,7 +60,7 @@ vim.keymap.set(
 )
 vim.keymap.set(
     "n",
-    "<leader>ds",
+    "<leader>dw",
     function()
         dapui.toggle()
     end
