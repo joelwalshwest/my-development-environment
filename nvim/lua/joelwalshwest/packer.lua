@@ -132,5 +132,7 @@ return require("packer").startup(
                 "nvim-treesitter/nvim-treesitter"
             }
         }
+
+        use {"kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async"}
     end
 )
