@@ -1,4 +1,4 @@
-alias rr="./run.sh"
+alias ss="./start.sh"
 alias tt="./test.sh"
 alias gg="lazygit"
 alias nn="nvim"

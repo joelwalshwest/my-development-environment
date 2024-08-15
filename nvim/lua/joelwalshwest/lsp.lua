@@ -50,7 +50,6 @@ cmp.setup(
             {
                 ["<C-u>"] = cmp.mapping.scroll_docs(-4),
                 ["<C-d>"] = cmp.mapping.scroll_docs(4),
-                ["<leader>c"] = cmp.mapping.complete(),
                 ["<ESC>"] = cmp.mapping.abort(),
                 ["<CR>"] = cmp.mapping.confirm({select = true}) -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
             }

@@ -49,8 +49,6 @@ vim.keymap.set("n", "<c-g>", ":vertical resize -5<CR>")
 vim.keymap.set("n", "<c-t>", ":horizontal resize +5<CR>")
 vim.keymap.set("n", "<c-s>", ":horizontal resize -5<CR>")
 
-vim.keymap.set("n", "<c-x>", ":w|bd<CR>")
-
 -- Function to switch to the next buffer without looping
 local function next_buffer()
     local current_buf = vim.api.nvim_get_current_buf()
@@ -100,10 +98,8 @@ local function prev_buffer()
 end
 -- Map the custom function to a keybinding
 vim.api.nvim_set_keymap("n", "<leader>wq", ":lua force_write_and_close()<CR>", {noremap = true, silent = true})
--- Create commands
-vim.api.nvim_create_user_command("BNext", next_buffer, {})
-vim.api.nvim_create_user_command("BPrev", prev_buffer, {})
 
 -- Key mappings
 vim.api.nvim_set_keymap("n", "<c-k>", ":BF<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<c-j>", ":BB<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<c-x>", ":BD<CR>", {noremap = true, silent = true})
