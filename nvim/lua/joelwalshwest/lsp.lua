@@ -29,6 +29,15 @@ lsp_zero.extend_lspconfig(
 -- These are just examples. Replace them with the language
 -- servers you have installed in your system
 require "lspconfig".pyright.setup {}
+require "lspconfig".gopls.setup {
+    cmd = {"gopls"},
+    filetypes = {"go", "gomod", "gowork", "gotmpl"},
+    root_dir = require("lspconfig/util").root_pattern("go.work", "go.mod", ".git"),
+    gopls = {
+        complete_unimported = true,
+        usePlaceholders = true
+    }
+}
 
 ---
 -- Autocompletion setup

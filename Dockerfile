@@ -15,7 +15,10 @@ RUN apk add --no-cache --update \
         wget \
         python3 \
         py3-pip \
-        fzf
+        fzf \
+        go \
+        gopls \
+        delve
 
 RUN wget -P /root/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/SourceCodePro.zip \
         && cd /root/.local/share/fonts \

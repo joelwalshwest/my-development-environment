@@ -73,7 +73,7 @@ return require("packer").startup(
         )
 
         -- tresitter
-        use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
+        use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
 
         -- harpoon
         use("theprimeagen/harpoon")
@@ -120,6 +120,7 @@ return require("packer").startup(
             }
         )
         use("HiPhish/debugpy.nvim")
+        use("leoluz/nvim-dap-go")
 
         -- neotest
         use {
@@ -129,8 +130,33 @@ return require("packer").startup(
                 "nvim-neotest/neotest-python",
                 "nvim-lua/plenary.nvim",
                 "antoinemadec/FixCursorHold.nvim",
-                "nvim-treesitter/nvim-treesitter"
-            }
+                "antoinemadec/FixCursorHold.nvim",
+                "nvim-treesitter/nvim-treesitter",
+                "fredrikaverpil/neotest-golang"
+            },
+            -- config = function()
+            --     require("neotest").setup(
+            --         {
+            --             adapters = {
+            --                 require("neotest-golang") -- Registration
+            --             }
+            --         }
+            --     )
+
+            --     local neotest_ns = vim.api.nvim_create_namespace("neotest")
+            --     vim.diagnostic.config(
+            --         {
+            --             virtual_text = {
+            --                 format = function(diagnostic)
+            --                     local message =
+            --                         diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
+            --                     return message
+            --                 end
+            --             }
+            --         },
+            --         neotest_ns
+            --     )
+            -- end
         }
 
         use {"kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async"}
