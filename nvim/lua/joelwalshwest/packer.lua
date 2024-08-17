@@ -42,7 +42,6 @@ return require("packer").startup(
         use {"mhartington/formatter.nvim"}
 
         -- terminal
-        use "numToStr/FTerm.nvim"
         use "voldikss/vim-floaterm"
 
         -- packer
