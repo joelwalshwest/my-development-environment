@@ -1,3 +1,14 @@
+require "FTerm".setup(
+    {
+        border = "double",
+        dimensions = {
+            height = 0.9,
+            width = 0.9
+        },
+        cmd = "/bin/bash"
+    }
+)
+
 vim.cmd(
     [[
   let g:floaterm_width = 0.95
