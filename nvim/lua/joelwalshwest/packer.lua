@@ -102,21 +102,7 @@ return require("packer").startup(
         use(
             {
                 "rcarriga/nvim-dap-ui",
-                requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"},
-                config = function()
-                    local dap = require("dap")
-                    local dapui = require("dapui")
-                    dapui.setup()
-                    dap.listeners.after.event_initialized["dapui_config"] = function()
-                        dapui.open()
-                    end
-                    dap.listeners.before.event_initialized["dapui_config"] = function()
-                        dapui.close()
-                    end
-                    dap.listeners.before.event_exited["dapui_config"] = function()
-                        dapui.close()
-                    end
-                end
+                requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}
             }
         )
         use("HiPhish/debugpy.nvim")
@@ -127,36 +113,12 @@ return require("packer").startup(
             "nvim-neotest/neotest",
             requires = {
                 "nvim-neotest/nvim-nio",
-                "nvim-neotest/neotest-python",
                 "nvim-lua/plenary.nvim",
                 "antoinemadec/FixCursorHold.nvim",
-                "antoinemadec/FixCursorHold.nvim",
                 "nvim-treesitter/nvim-treesitter",
+                "nvim-neotest/neotest-python",
                 "fredrikaverpil/neotest-golang"
-            },
-            -- config = function()
-            --     require("neotest").setup(
-            --         {
-            --             adapters = {
-            --                 require("neotest-golang") -- Registration
-            --             }
-            --         }
-            --     )
-
-            --     local neotest_ns = vim.api.nvim_create_namespace("neotest")
-            --     vim.diagnostic.config(
-            --         {
-            --             virtual_text = {
-            --                 format = function(diagnostic)
-            --                     local message =
-            --                         diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
-            --                     return message
-            --                 end
-            --             }
-            --         },
-            --         neotest_ns
-            --     )
-            -- end
+            }
         }
 
         use {"kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async"}

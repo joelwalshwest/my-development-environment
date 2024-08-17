@@ -137,9 +137,15 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
   },
   neotest = {
+    config = { "\27LJ\2\n|\0\1\6\0\b\0\0229\1\0\0\18\3\1\0009\1\1\1'\4\2\0'\5\3\0B\1\4\2\18\3\1\0009\1\1\1'\4\4\0'\5\3\0B\1\4\2\18\3\1\0009\1\1\1'\4\5\0'\5\3\0B\1\4\2\18\3\1\0009\1\1\1'\4\6\0'\5\a\0B\1\4\2L\1\2\0\5\t^%s+\b%s+\6\t\6 \6\n\tgsub\fmessage\30\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\2¿\topen\31\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\2¿\nclose\31\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\2¿\ncloseË\3\1\0\a\0\28\00186\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\5\0004\3\3\0006\4\0\0'\6\3\0B\4\2\2>\4\1\0036\4\0\0'\6\4\0B\4\2\0?\4\0\0=\3\6\2B\0\2\0016\0\a\0009\0\b\0009\0\t\0'\2\1\0B\0\2\0026\1\a\0009\1\n\0019\1\v\0015\3\15\0005\4\r\0003\5\f\0=\5\14\4=\4\16\3\18\4\0\0B\1\3\0016\1\0\0'\3\17\0B\1\2\0026\2\0\0'\4\18\0B\2\2\0029\3\2\2B\3\1\0019\3\19\0019\3\20\0039\3\21\0033\4\23\0=\4\22\0039\3\19\0019\3\24\0039\3\21\0033\4\25\0=\4\22\0039\3\19\0019\3\24\0039\3\26\0033\4\27\0=\4\22\0032\0\0ÄK\0\1\0\0\17event_exited\0\vbefore\0\17dapui_config\22event_initialized\nafter\14listeners\ndapui\bdap\17virtual_text\1\0\1\17virtual_text\0\vformat\1\0\1\vformat\0\0\vconfig\15diagnostic\26nvim_create_namespace\bapi\bvim\radapters\1\0\1\radapters\0\19neotest-golang\19neotest-python\nsetup\fneotest\frequire\5ÄÄ¿ô\4\0" },
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/neotest",
     url = "https://github.com/nvim-neotest/neotest"
+  },
+  ["neotest-golang"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/neotest-golang",
+    url = "https://github.com/fredrikaverpil/neotest-golang"
   },
   ["neotest-python"] = {
     loaded = true,
@@ -161,13 +167,17 @@ _G.packer_plugins = {
     path = "/root/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
   },
+  ["nvim-dap-go"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-dap-go",
+    url = "https://github.com/leoluz/nvim-dap-go"
+  },
   ["nvim-dap-python"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/nvim-dap-python",
     url = "https://github.com/mfussenegger/nvim-dap-python"
   },
   ["nvim-dap-ui"] = {
-    config = { "\27LJ\2\n\30\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\1¿\topen\31\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\1¿\nclose\31\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\1¿\nclose…\1\1\0\4\0\r\0\0256\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0029\2\3\1B\2\1\0019\2\4\0009\2\5\0029\2\6\0023\3\b\0=\3\a\0029\2\4\0009\2\t\0029\2\6\0023\3\n\0=\3\a\0029\2\4\0009\2\t\0029\2\v\0023\3\f\0=\3\a\0022\0\0ÄK\0\1\0\0\17event_exited\0\vbefore\0\17dapui_config\22event_initialized\nafter\14listeners\nsetup\ndapui\bdap\frequire\0" },
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
     url = "https://github.com/rcarriga/nvim-dap-ui"
@@ -187,6 +197,11 @@ _G.packer_plugins = {
     path = "/root/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-ufo"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-ufo",
+    url = "https://github.com/kevinhwang91/nvim-ufo"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -201,6 +216,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["promise-async"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/promise-async",
+    url = "https://github.com/kevinhwang91/promise-async"
   },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
@@ -230,10 +250,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-dap-ui
-time([[Config for nvim-dap-ui]], true)
-try_loadstring("\27LJ\2\n\30\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\1¿\topen\31\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\1¿\nclose\31\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\1¿\nclose…\1\1\0\4\0\r\0\0256\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0029\2\3\1B\2\1\0019\2\4\0009\2\5\0029\2\6\0023\3\b\0=\3\a\0029\2\4\0009\2\t\0029\2\6\0023\3\n\0=\3\a\0029\2\4\0009\2\t\0029\2\v\0023\3\f\0=\3\a\0022\0\0ÄK\0\1\0\0\17event_exited\0\vbefore\0\17dapui_config\22event_initialized\nafter\14listeners\nsetup\ndapui\bdap\frequire\0", "config", "nvim-dap-ui")
-time([[Config for nvim-dap-ui]], false)
+-- Config for: neotest
+time([[Config for neotest]], true)
+try_loadstring("\27LJ\2\n|\0\1\6\0\b\0\0229\1\0\0\18\3\1\0009\1\1\1'\4\2\0'\5\3\0B\1\4\2\18\3\1\0009\1\1\1'\4\4\0'\5\3\0B\1\4\2\18\3\1\0009\1\1\1'\4\5\0'\5\3\0B\1\4\2\18\3\1\0009\1\1\1'\4\6\0'\5\a\0B\1\4\2L\1\2\0\5\t^%s+\b%s+\6\t\6 \6\n\tgsub\fmessage\30\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\2¿\topen\31\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\2¿\nclose\31\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\2¿\ncloseË\3\1\0\a\0\28\00186\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\5\0004\3\3\0006\4\0\0'\6\3\0B\4\2\2>\4\1\0036\4\0\0'\6\4\0B\4\2\0?\4\0\0=\3\6\2B\0\2\0016\0\a\0009\0\b\0009\0\t\0'\2\1\0B\0\2\0026\1\a\0009\1\n\0019\1\v\0015\3\15\0005\4\r\0003\5\f\0=\5\14\4=\4\16\3\18\4\0\0B\1\3\0016\1\0\0'\3\17\0B\1\2\0026\2\0\0'\4\18\0B\2\2\0029\3\2\2B\3\1\0019\3\19\0019\3\20\0039\3\21\0033\4\23\0=\4\22\0039\3\19\0019\3\24\0039\3\21\0033\4\25\0=\4\22\0039\3\19\0019\3\24\0039\3\26\0033\4\27\0=\4\22\0032\0\0ÄK\0\1\0\0\17event_exited\0\vbefore\0\17dapui_config\22event_initialized\nafter\14listeners\ndapui\bdap\17virtual_text\1\0\1\17virtual_text\0\vformat\1\0\1\vformat\0\0\vconfig\15diagnostic\26nvim_create_namespace\bapi\bvim\radapters\1\0\1\radapters\0\19neotest-golang\19neotest-python\nsetup\fneotest\frequire\5ÄÄ¿ô\4\0", "config", "neotest")
+time([[Config for neotest]], false)
 -- Config for: auto-save.nvim
 time([[Config for auto-save.nvim]], true)
 try_loadstring("\27LJ\2\n\16\0\0\1\0\1\0\2'\0\0\0L\0\2\0\5Û\1\1\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\a\0003\4\6\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\22execution_message\fmessage\1\0\3\bdim\4äÆèÖ\aΩîú˛\3\fmessage\0\22cleaning_interval\3‚\t\0\19trigger_events\1\0\3\22execution_message\0\19trigger_events\0\fenabled\2\1\3\0\0\rBufLeave\14FocusLost\nsetup\14auto-save\frequire\0", "config", "auto-save.nvim")
