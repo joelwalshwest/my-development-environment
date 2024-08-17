@@ -2,6 +2,7 @@ import unittest
 
 
 class TestClass(unittest.TestCase):
+
     def test_thing(self):
         test = "lskjf"
         print(test)

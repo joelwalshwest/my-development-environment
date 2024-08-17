@@ -1,15 +1,21 @@
 local neotest = require("neotest")
 
+local golang = require("neotest-golang")
+local python =
+    require("neotest-python")(
+    {
+        dap = {justMyCode = false},
+        is_test_file = function(file_path)
+            -- print(filepath)
+            return true
+        end,
+        pytest_discover_instances = true
+    }
+)
+
 neotest.setup(
     {
-        adapters = {
-            require("neotest-golang"),
-            require("neotest-python")(
-                {
-                    dap = {justMyCode = false}
-                }
-            ),
-        }
+        adapters = {golang, python}
     }
 )
 
