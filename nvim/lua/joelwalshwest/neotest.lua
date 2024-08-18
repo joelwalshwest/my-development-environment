@@ -28,3 +28,11 @@ vim.keymap.set(
         neotest.run.run({strategy = "dap"})
     end
 )
+
+vim.keymap.set(
+    "n", 
+    "gu",
+    function()
+        require("neotest").output.open()
+    end
+)
