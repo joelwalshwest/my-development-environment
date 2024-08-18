@@ -5,6 +5,9 @@ vim.cmd [[packadd packer.nvim]]
 
 return require("packer").startup(
     function(use)
+        -- doorboy
+        use "itmammoth/doorboy.vim"
+
         -- marks
         use(
             {
