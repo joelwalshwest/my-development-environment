@@ -5,6 +5,15 @@ vim.cmd [[packadd packer.nvim]]
 
 return require("packer").startup(
     function(use)
+        -- fzf
+        use {
+            "ibhagwan/fzf-lua",
+            -- optional for icon support
+            requires = {"nvim-tree/nvim-web-devicons"}
+            -- or if using mini.icons/mini.nvim
+            -- requires = { "echasnovski/mini.icons" }
+        }
+
         -- neotree
         use {
             "nvim-neo-tree/neo-tree.nvim",

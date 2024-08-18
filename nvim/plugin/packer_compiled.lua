@@ -74,18 +74,13 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["FTerm.nvim"] = {
-    loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/FTerm.nvim",
-    url = "https://github.com/numToStr/FTerm.nvim"
-  },
   ["FixCursorHold.nvim"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
     url = "https://github.com/antoinemadec/FixCursorHold.nvim"
   },
   ["auto-save.nvim"] = {
-    config = { "\27LJ\2\n\16\0\0\1\0\1\0\2'\0\0\0L\0\2\0\5Û\1\1\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\a\0003\4\6\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\22execution_message\fmessage\1\0\3\22cleaning_interval\3‚\t\bdim\4äÆèÖ\aΩîú˛\3\fmessage\0\0\19trigger_events\1\0\3\fenabled\2\22execution_message\0\19trigger_events\0\1\3\0\0\rBufLeave\14FocusLost\nsetup\14auto-save\frequire\0" },
+    config = { "\27LJ\2\n\16\0\0\1\0\1\0\2'\0\0\0L\0\2\0\5Û\1\1\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\a\0003\4\6\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\22execution_message\fmessage\1\0\3\22cleaning_interval\3‚\t\bdim\4äÆèÖ\aΩîú˛\3\fmessage\0\0\19trigger_events\1\0\3\19trigger_events\0\fenabled\2\22execution_message\0\1\3\0\0\rBufLeave\14FocusLost\nsetup\14auto-save\frequire\0" },
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/auto-save.nvim",
     url = "https://github.com/Pocco81/auto-save.nvim"
@@ -110,6 +105,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/formatter.nvim",
     url = "https://github.com/mhartington/formatter.nvim"
+  },
+  ["fzf-lua"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/fzf-lua",
+    url = "https://github.com/ibhagwan/fzf-lua"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -249,14 +249,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: auto-save.nvim
-time([[Config for auto-save.nvim]], true)
-try_loadstring("\27LJ\2\n\16\0\0\1\0\1\0\2'\0\0\0L\0\2\0\5Û\1\1\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\a\0003\4\6\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\22execution_message\fmessage\1\0\3\22cleaning_interval\3‚\t\bdim\4äÆèÖ\aΩîú˛\3\fmessage\0\0\19trigger_events\1\0\3\fenabled\2\22execution_message\0\19trigger_events\0\1\3\0\0\rBufLeave\14FocusLost\nsetup\14auto-save\frequire\0", "config", "auto-save.nvim")
-time([[Config for auto-save.nvim]], false)
 -- Config for: catppuccin
 time([[Config for catppuccin]], true)
 try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\27colorscheme catppuccin\bcmd\bvim\0", "config", "catppuccin")
 time([[Config for catppuccin]], false)
+-- Config for: auto-save.nvim
+time([[Config for auto-save.nvim]], true)
+try_loadstring("\27LJ\2\n\16\0\0\1\0\1\0\2'\0\0\0L\0\2\0\5Û\1\1\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\a\0003\4\6\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\22execution_message\fmessage\1\0\3\22cleaning_interval\3‚\t\bdim\4äÆèÖ\aΩîú˛\3\fmessage\0\0\19trigger_events\1\0\3\19trigger_events\0\fenabled\2\22execution_message\0\1\3\0\0\rBufLeave\14FocusLost\nsetup\14auto-save\frequire\0", "config", "auto-save.nvim")
+time([[Config for auto-save.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
