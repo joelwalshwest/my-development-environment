@@ -5,6 +5,23 @@ vim.cmd [[packadd packer.nvim]]
 
 return require("packer").startup(
     function(use)
+        -- marks
+        use(
+            {
+                "chentoast/marks.nvim",
+                config = function()
+                    require "marks".setup(
+                        {
+                            default_mappings = false,
+                            mappings = {
+                                delete_line = "md"
+                            }
+                        }
+                    )
+                end
+            }
+        )
+
         -- fzf
         use {
             "ibhagwan/fzf-lua",
