@@ -107,3 +107,15 @@ vim.api.nvim_set_keymap("n", "<c-x>", ":BD<CR>", {noremap = true, silent = true}
 -- Exiting
 vim.api.nvim_set_keymap("n", "<leader>q", ":wqa!<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>Q", ":qa!<CR>", {noremap = true, silent = true})
+
+-- Bookmarks
+vim.api.nvim_set_keymap("n", "mt", "mT", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "gt", "`T", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "ms", "mS", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "gs", "`S", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "mm", "mM", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "gm", "`M", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "m,", "mY", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "g,", "`Y", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "mx", "mX", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "gx", "`X", {noremap = true, silent = true})
