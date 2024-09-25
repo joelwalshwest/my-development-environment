@@ -57,4 +57,4 @@ RUN tmux start-server && \
 
 ENV TERM xterm-256color
 
-CMD ["tmux"]
+CMD ["tmux", "-u"]
