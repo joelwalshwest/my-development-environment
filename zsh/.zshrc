@@ -13,3 +13,5 @@ fuzzy_cd() {
 
 alias cc="fuzzy_cd"
 
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.p10k.zsh

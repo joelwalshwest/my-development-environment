@@ -20,7 +20,8 @@ RUN apk add --no-cache --update \
         gopls \
         delve \
         fd \
-        tmux
+        tmux \
+        curl
 
 RUN wget -P /root/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/SourceCodePro.zip \
         && cd /root/.local/share/fonts \
@@ -38,11 +39,13 @@ RUN npm i -g pyright lua-fmt
 
 RUN git clone --depth 1 https://github.com/wbthomason/packer.nvim /root/.local/share/nvim/site/pack/packer/start/packer.nvim
 RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 
 COPY ./nvim /root/.config/nvim
 COPY ./lazygit /root/.config/lazygit
 COPY ./zsh/.zshrc /root/.zshrc
 COPY ./tmux /root/.config/tmux
+COPY ./p10k/.p10k.zsh /root/.p10k.zsh
 
 RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 RUN nvim --headless -c 'TSUpdateSync' -c 'sleep 5' -c 'qa'
@@ -54,7 +57,5 @@ RUN tmux start-server && \
     sleep 1 && \
     ~/.tmux/plugins/tpm/scripts/install_plugins.sh && \
     tmux kill-server
-
-ENV TERM xterm-256color
 
 CMD ["tmux", "-u"]
