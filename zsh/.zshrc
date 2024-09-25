@@ -12,3 +12,4 @@ fuzzy_cd() {
 }
 
 alias cc="fuzzy_cd"
+

@@ -4,7 +4,7 @@ FROM alpine:latest
 
 # Install required packages
 RUN apk add --no-cache --update \
-        bash \
+        zsh \
         lazygit \
         npm \
         git \
@@ -41,7 +41,7 @@ RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 COPY ./nvim /root/.config/nvim
 COPY ./lazygit /root/.config/lazygit
-COPY ./bash/.bashrc /root/.bashrc
+COPY ./zsh/.zshrc /root/.zshrc
 COPY ./tmux /root/.config/tmux
 
 RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
@@ -54,5 +54,7 @@ RUN tmux start-server && \
     sleep 1 && \
     ~/.tmux/plugins/tpm/scripts/install_plugins.sh && \
     tmux kill-server
+
+ENV TERM xterm-256color
 
 CMD ["tmux"]
