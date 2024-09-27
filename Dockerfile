@@ -21,7 +21,8 @@ RUN apk add --no-cache --update \
         delve \
         fd \
         tmux \
-        curl
+        curl \
+        jq
 
 RUN wget -P /root/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/SourceCodePro.zip \
         && cd /root/.local/share/fonts \
@@ -35,7 +36,7 @@ ENV PATH="/my-venv/bin:$PATH"
 RUN  git config --global user.email "joelwalshwest@gmail.com"
 RUN  git config --global user.name = "Joel Walshwest"
 
-RUN npm i -g pyright lua-fmt
+RUN npm i -g pyright lua-fmt typescript-language-server typescript tailwindcss-language-server tailwindcss prettier stylefmt
 
 RUN git clone --depth 1 https://github.com/wbthomason/packer.nvim /root/.local/share/nvim/site/pack/packer/start/packer.nvim
 RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -58,4 +59,5 @@ RUN tmux start-server && \
     ~/.tmux/plugins/tpm/scripts/install_plugins.sh && \
     tmux kill-server
 
+EXPOSE 8080
 CMD ["tmux", "-u"]

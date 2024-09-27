@@ -11,6 +11,18 @@ require("formatter").setup {
     filetype = {
         -- Formatter configurations for filetype "lua" go here
         -- and will be executed in order
+        css = {
+            require("formatter.filetypes.css").stylefmt
+        },
+        javascript = {
+            require("formatter.filetypes.javascript").prettier
+        },
+        javascriptreact = {
+            require("formatter.filetypes.javascriptreact").prettier
+        },
+        json = {
+            require("formatter.filetypes.json").jq
+        },
         python = {
             require("formatter.filetypes.python").black
         },
@@ -23,6 +35,12 @@ require("formatter").setup {
         },
         go = {
             require("formatter.filetypes.go").gofmt
+        },
+        typescript = {
+            require("formatter.filetypes.typescript").prettier
+        },
+        typescriptreact = {
+            require("formatter.filetypes.typescriptreact").prettier
         },
         -- Use the special "*" filetype for defining formatter configurations on
         -- any filetype

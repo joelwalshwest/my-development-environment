@@ -136,6 +136,9 @@ return require("packer").startup(
         use("HiPhish/debugpy.nvim")
         use("leoluz/nvim-dap-go")
 
+        -- autotag
+        use("windwp/nvim-ts-autotag")
+        
         -- neotest
         use {
             "nvim-neotest/neotest",

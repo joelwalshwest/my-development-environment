@@ -29,6 +29,14 @@ lsp_zero.extend_lspconfig(
 -- These are just examples. Replace them with the language
 -- servers you have installed in your system
 require "lspconfig".pyright.setup {}
+require "lspconfig".ts_ls.setup {}
+require "lspconfig".tailwindcss.setup {
+    cmd = { "tailwindcss-language-server", "--stdio" },
+    filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+    root_dir = require "lspconfig".util.root_pattern("tailwind.config.js", "package.json"),
+    settings = {},
+}
+
 require "lspconfig".gopls.setup {
     cmd = {"gopls"},
     filetypes = {"go", "gomod", "gowork", "gotmpl"},
