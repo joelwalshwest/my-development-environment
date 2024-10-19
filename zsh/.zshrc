@@ -1,5 +1,5 @@
-alias ss="./start.sh"
-alias tt="./test.sh"
+alias ss="scripts/start.sh"
+alias tt="scripts/test.sh"
 alias gg="lazygit"
 alias nn="nvim"
 
