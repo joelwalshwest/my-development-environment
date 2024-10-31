@@ -3,6 +3,7 @@ alias tt="scripts/test.sh"
 alias gg="lazygit"
 alias nn="nvim"
 alias XX="tmux kill-server"
+alias gs="git status"
 
 fuzzy_cd() {
     local dir
