@@ -2,6 +2,7 @@ alias ss="scripts/start.sh"
 alias tt="scripts/test.sh"
 alias gg="lazygit"
 alias nn="nvim"
+alias XX="tmux kill-server"
 
 fuzzy_cd() {
     local dir
