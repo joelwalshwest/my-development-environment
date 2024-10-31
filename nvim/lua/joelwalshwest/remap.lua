@@ -25,7 +25,7 @@ vim.keymap.set("n", "<leader>w", ":w<CR>")
 vim.keymap.set("n", "<leader>s", ":w<CR>")
 
 -- tabs
-vim.keymap.set("n", "sa", ":tab split<CR>")
+vim.keymap.set("n", "st", ":tab split<CR>")
 vim.keymap.set("n", "sp", "gT")
 vim.keymap.set("n", "sn", "gt")
 
