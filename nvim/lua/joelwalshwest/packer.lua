@@ -1,5 +1,5 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
--- Only required if you have packer configured as `opt`
+-- Only required if you have packer configured as `opt`packer
 vim.cmd [[packadd packer.nvim]]
 
 return require("packer").startup(
@@ -184,6 +184,50 @@ return require("packer").startup(
                     "folke/trouble.nvim",
                     "nvim-telescope/telescope.nvim"
                 }
+            }
+        )
+
+        -- codecompanioin
+        use(
+            {
+                "olimorris/codecompanion.nvim",
+                requires = {
+                    "nvim-lua/plenary.nvim",
+                    "nvim-treesitter/nvim-treesitter",
+                    "nvim-telescope/telescope.nvim", -- For using slash commands
+                    {"MeanderingProgrammer/render-markdown.nvim", ft = {"markdown", "codecompanion"}}
+                },
+                config = function()
+                    require("codecompanion").setup(
+                        {
+                            adapters = {
+                                openai = function()
+                                    return require("codecompanion.adapters").extend(
+                                        "openai",
+                                        {
+                                            env = {
+                                                api_key = "OPENAI_API_KEY"
+                                            }
+                                        }
+                                    )
+                                end
+                            },
+                            display = {
+                                chat = {
+                                    render_headers = false
+                                }
+                            },
+                            strategies = {
+                                chat = {
+                                    adapter = "openai"
+                                },
+                                inline = {
+                                    adapter = "openai"
+                                }
+                            }
+                        }
+                    )
+                end
             }
         )
     end
