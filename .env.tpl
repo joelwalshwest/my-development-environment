@@ -1,0 +1,1 @@
+OPENAI_API_KEY=op://my-development-environment/OpenAI-API-Key/key

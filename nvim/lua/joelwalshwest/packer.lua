@@ -1,5 +1,4 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
@@ -101,7 +100,12 @@ return require("packer").startup(
         )
 
         -- tresitter
-        use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
+        use(
+            {
+                "nvim-treesitter/nvim-treesitter",
+                run = ":TSUpdate"
+            }
+        )
 
         -- harpoon
         use("theprimeagen/harpoon")
@@ -112,7 +116,10 @@ return require("packer").startup(
         -- lualine
         use {
             "nvim-lualine/lualine.nvim",
-            requires = {"nvim-tree/nvim-web-devicons", opt = true}
+            requires = {
+                "nvim-tree/nvim-web-devicons",
+                opt = true
+            }
         }
 
         -- gitsigns
@@ -138,7 +145,7 @@ return require("packer").startup(
 
         -- autotag
         use("windwp/nvim-ts-autotag")
-        
+
         -- neotest
         use {
             "nvim-neotest/neotest",
@@ -153,6 +160,31 @@ return require("packer").startup(
             }
         }
 
-        use {"kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async"}
+        use {
+            "kevinhwang91/nvim-ufo",
+            requires = "kevinhwang91/promise-async"
+        }
+
+        -- ChatGPT
+        use(
+            {
+                "jackMort/ChatGPT.nvim",
+                config = function()
+                    require("chatgpt").setup(
+                        {
+                            keymaps = {
+                                submit = "<C-8>"
+                            }
+                        }
+                    )
+                end,
+                requires = {
+                    "MunifTanjim/nui.nvim",
+                    "nvim-lua/plenary.nvim",
+                    "folke/trouble.nvim",
+                    "nvim-telescope/telescope.nvim"
+                }
+            }
+        )
     end
 )
