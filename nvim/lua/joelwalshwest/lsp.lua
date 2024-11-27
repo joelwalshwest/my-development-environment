@@ -12,11 +12,9 @@ local lsp_attach = function(client, bufnr)
     -- vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
     vim.keymap.set("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
     vim.keymap.set({"n", "x"}, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
-    vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+    vim.keymap.set("n", "<leader>a", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
     vim.keymap.set("n", "ge", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 end
-
-
 
 lsp_zero.extend_lspconfig(
     {
@@ -26,15 +24,31 @@ lsp_zero.extend_lspconfig(
     }
 )
 
+local function organize_imports()
+    local params = {
+        command = "_typescript.organizeImports",
+        arguments = {vim.api.nvim_buf_get_name(0)},
+        title = ""
+    }
+    vim.lsp.buf.execute_command(params)
+end
+
 -- These are just examples. Replace them with the language
 -- servers you have installed in your system
 require "lspconfig".pyright.setup {}
-require "lspconfig".ts_ls.setup {}
+require "lspconfig".ts_ls.setup {
+    commands = {
+        OrganizeImports = {
+            organize_imports,
+            description = "Organize Imports"
+        }
+    }
+}
 require "lspconfig".tailwindcss.setup {
-    cmd = { "tailwindcss-language-server", "--stdio" },
-    filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+    cmd = {"tailwindcss-language-server", "--stdio"},
+    filetypes = {"html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue"},
     root_dir = require "lspconfig".util.root_pattern("tailwind.config.js", "package.json"),
-    settings = {},
+    settings = {}
 }
 
 require "lspconfig".gopls.setup {

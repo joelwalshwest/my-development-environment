@@ -54,11 +54,14 @@ require("formatter").setup {
 
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
-augroup("__formatter__", {clear = true})
-autocmd(
+
+vim.api.nvim_create_autocmd(
     "BufWritePost",
     {
-        group = "__formatter__",
-        command = ":FormatWrite"
+        group = vim.api.nvim_create_augroup("__formatter__", {clear = true}),
+        callback = function()
+            vim.cmd("FormatWrite")
+            vim.cmd("OrganizeImports")
+        end
     }
 )
