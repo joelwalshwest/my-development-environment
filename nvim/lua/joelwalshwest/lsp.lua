@@ -16,8 +16,6 @@ local lsp_attach = function(client, bufnr)
     vim.keymap.set("n", "ge", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 end
 
-
-
 lsp_zero.extend_lspconfig(
     {
         sign_text = true,
@@ -31,10 +29,10 @@ lsp_zero.extend_lspconfig(
 require "lspconfig".pyright.setup {}
 require "lspconfig".ts_ls.setup {}
 require "lspconfig".tailwindcss.setup {
-    cmd = { "tailwindcss-language-server", "--stdio" },
-    filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+    cmd = {"tailwindcss-language-server", "--stdio"},
+    filetypes = {"html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue"},
     root_dir = require "lspconfig".util.root_pattern("tailwind.config.js", "package.json"),
-    settings = {},
+    settings = {}
 }
 
 require "lspconfig".gopls.setup {
