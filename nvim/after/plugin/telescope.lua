@@ -23,7 +23,10 @@ vim.keymap.set(
         builtin.find_files({cwd = "/", hidden = true})
     end
 )
-vim.keymap.set("n", "<leader>h", builtin.git_files, {})
+vim.keymap.set("n", "<leader>F", builtin.live_grep, {})
+vim.keymap.set("n", "<leader>H", builtin.git_status, {})
+vim.keymap.set("n", "<leader>p", builtin.commands, {})
+vim.keymap.set("n", "<leader>di", builtin.diagnostics, {})
 vim.keymap.set(
     "n",
     "<leader>l",
