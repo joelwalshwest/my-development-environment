@@ -1,6 +1,6 @@
-import debugpy
 import time
 
+import debugpy
 from debugpy.server.api import os
 
 debugpy.listen(("0.0.0.0", 56789))

@@ -15,8 +15,10 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
+vim.api.nvim_set_option('ignorecase', true)
+vim.api.nvim_set_option('smartcase', true)
 
 vim.opt.termguicolors = true
 

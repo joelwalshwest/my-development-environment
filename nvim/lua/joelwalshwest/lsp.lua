@@ -24,7 +24,7 @@ lsp_zero.extend_lspconfig(
     }
 )
 
-local function organize_imports()
+local function organize_ts_imports()
     local params = {
         command = "_typescript.organizeImports",
         arguments = {vim.api.nvim_buf_get_name(0)},
@@ -33,14 +33,27 @@ local function organize_imports()
     vim.lsp.buf.execute_command(params)
 end
 
+local function organize_py_imports()
+  local params = {
+    command = 'pyright.organizeimports',
+    arguments = { vim.uri_from_bufnr(0) },
+  }
+  vim.lsp.buf.execute_command(params)
+end
+
 -- These are just examples. Replace them with the language
 -- servers you have installed in your system
-require "lspconfig".pyright.setup {}
+require "lspconfig".pyright.setup {
+    PyrightOrganizeImports = {
+      organize_imports,
+      description = 'Organize Imports',
+    },
+}
 require "lspconfig".ts_ls.setup {
     commands = {
         OrganizeImports = {
-            organize_imports,
-            description = "Organize Imports"
+            organize_ts_imports,
+            description = "Organize TS Imports"
         }
     }
 }
