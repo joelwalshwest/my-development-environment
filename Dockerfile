@@ -36,7 +36,7 @@ ENV PATH="/my-venv/bin:$PATH"
 RUN  git config --global user.email "joelwalshwest@gmail.com"
 RUN  git config --global user.name = "Joel Walshwest"
 
-RUN npm i -g pyright lua-fmt typescript-language-server typescript tailwindcss-language-server tailwindcss prettier stylefmt
+RUN npm i -g pyright lua-fmt typescript-language-server typescript tailwindcss-language-server tailwindcss prettier stylefmt @tailwindcss/language-server source-map-support
 
 RUN git clone --depth 1 https://github.com/wbthomason/packer.nvim /root/.local/share/nvim/site/pack/packer/start/packer.nvim
 RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -54,10 +54,10 @@ RUN nvim --headless -c 'TSUpdateSync' -c 'sleep 5' -c 'qa'
 WORKDIR /root/
 
 RUN tmux start-server && \
-    tmux new-session -d && \
-    sleep 1 && \
-    ~/.tmux/plugins/tpm/scripts/install_plugins.sh && \
-    tmux kill-server
+        tmux new-session -d && \
+        sleep 1 && \
+        ~/.tmux/plugins/tpm/scripts/install_plugins.sh && \
+        tmux kill-server
 
 EXPOSE 8080
 CMD ["tmux", "-u"]

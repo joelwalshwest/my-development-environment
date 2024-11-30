@@ -4,6 +4,22 @@ vim.cmd [[packadd packer.nvim]]
 
 return require("packer").startup(
     function(use)
+        -- tailwind-sorter
+        use {
+            "laytan/tailwind-sorter.nvim",
+            requires = {"nvim-treesitter/nvim-treesitter", "nvim-lua/plenary.nvim"},
+            config = function()
+                require("tailwind-sorter").setup(
+                  {
+                    on_save_enabled = true, 
+                    on_save_pattern = { '*.html', '*.js', '*.jsx', '*.tsx', '*.twig', '*.hbs', '*.php', '*.heex', '*.astro' }, -- The file patterns to watch and sort.
+                    trim_spaces = true,
+                  }
+                )
+            end,
+            run = "cd formatter && npm ci && npm run build"
+        }
+
         -- doorboy
         use "itmammoth/doorboy.vim"
 

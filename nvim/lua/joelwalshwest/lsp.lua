@@ -34,20 +34,20 @@ local function organize_ts_imports()
 end
 
 local function organize_py_imports()
-  local params = {
-    command = 'pyright.organizeimports',
-    arguments = { vim.uri_from_bufnr(0) },
-  }
-  vim.lsp.buf.execute_command(params)
+    local params = {
+        command = "pyright.organizeimports",
+        arguments = {vim.uri_from_bufnr(0)}
+    }
+    vim.lsp.buf.execute_command(params)
 end
 
 -- These are just examples. Replace them with the language
 -- servers you have installed in your system
 require "lspconfig".pyright.setup {
     PyrightOrganizeImports = {
-      organize_imports,
-      description = 'Organize Imports',
-    },
+        organize_imports,
+        description = "Organize Imports"
+    }
 }
 require "lspconfig".ts_ls.setup {
     commands = {
@@ -57,12 +57,7 @@ require "lspconfig".ts_ls.setup {
         }
     }
 }
-require "lspconfig".tailwindcss.setup {
-    cmd = {"tailwindcss-language-server", "--stdio"},
-    filetypes = {"html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue"},
-    root_dir = require "lspconfig".util.root_pattern("tailwind.config.js", "package.json"),
-    settings = {}
-}
+require "lspconfig".tailwindcss.setup({})
 
 require "lspconfig".gopls.setup {
     cmd = {"gopls"},
