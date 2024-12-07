@@ -121,9 +121,15 @@ alias ee="scripts/enter.sh"
 alias dd="scripts/dev.sh"
 
 alias gg="lazygit"
-alias nn="nvim"
 alias kk="lazydocker"
 alias gs="git status"
+
+launch_nvim() {
+  export OPENAI_API_KEY=$(op read op://Private/OpenAI-API-Key/key)
+  nvim
+}
+
+alias nn="launch_nvim"
 
 fuzzy_cd() {
     local dir
