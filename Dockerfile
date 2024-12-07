@@ -22,6 +22,7 @@ RUN apk add --no-cache --update \
         fd \
         tmux \
         curl \
+        bash \
         jq
 
 RUN wget -P /root/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/SourceCodePro.zip \
@@ -45,7 +46,7 @@ RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerleve
 COPY ./nvim /root/.config/nvim
 COPY ./lazygit /root/.config/lazygit
 COPY ./zsh/.zshrc /root/.zshrc
-COPY ./tmux /root/.config/tmux
+COPY ./tmux/tmux.conf /root/.tmux.conf
 COPY ./p10k/.p10k.zsh /root/.p10k.zsh
 
 RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
