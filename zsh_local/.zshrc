@@ -126,14 +126,20 @@ alias gs="git status"
 
 launch_nvim() {
   export OPENAI_API_KEY=$(op read op://Private/OpenAI-API-Key/key)
-  nvim
+  nvim "$@"
 }
 
 alias nn="launch_nvim"
 
 fuzzy_cd() {
     local dir
-    dir=$(find ~/. -type d 2> /dev/null | fzf --height 40% --layout reverse)
+    dir=$(find ~/ -type d \( \
+        -path '*/.Trash' -o \
+        -path '*/.DS_Store' -o \
+        -path '*/Library' -o \
+        -path '*/.git' -o \
+        -path '*/node_modules' \
+    \) -prune -o -type d -print 2> /dev/null | fzf --height 40% --layout reverse)
     if [ -n "$dir" ]; then
         cd "$dir" || return
     fi
