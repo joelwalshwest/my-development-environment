@@ -60,15 +60,15 @@ vim.api.nvim_create_autocmd(
     {
         group = vim.api.nvim_create_augroup("__formatter__", {clear = true}),
         callback = function()
-            vim.cmd("FormatWrite")
+            vim.cmd("FormatWriteLock")
 
-             local ft = vim.bo.filetype
+            local ft = vim.bo.filetype
 
             if ft == "typescript" or ft == "typescriptreact" then
-              vim.cmd("OrganizeImports")
+                vim.cmd("OrganizeImports")
             end
             if ft == "python" then
-              vim.cmd("PyrightOrganizeImports")
+                vim.cmd("PyrightOrganizeImports")
             end
         end
     }
