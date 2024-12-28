@@ -26,7 +26,7 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<leader>/", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>H", builtin.git_status, {})
-vim.keymap.set("n", "<leader>p", builtin.commands, {})
+vim.keymap.set("n", "<leader>P", builtin.commands, {})
 vim.keymap.set("n", "<leader>di", builtin.diagnostics, {})
 vim.keymap.set(
     "n",

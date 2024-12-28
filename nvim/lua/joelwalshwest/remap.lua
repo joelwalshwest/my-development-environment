@@ -10,12 +10,11 @@ vim.keymap.set("n", "<leader>H", ":LazyGit<CR>")
 
 -- movement
 vim.keymap.set("n", "H", "^")
+vim.keymap.set("v", "H", "^")
 vim.keymap.set("n", "L", "$")
+vim.keymap.set("v", "L", "$")
 vim.keymap.set("n", "{", "[mzz")
 vim.keymap.set("n", "}", "]mzz")
-
--- pasting
-vim.keymap.set("n", "<leader>p", '"_dP', {noremap = true, silent = true})
 
 -- searching
 vim.keymap.set("n", "<leader>h", ":set hls!<CR>")
@@ -33,8 +32,8 @@ vim.keymap.set("n", "sp", "gT")
 vim.keymap.set("n", "sn", "gt")
 
 -- split management
-vim.keymap.set("n", "sv", "<c-w>s")
-vim.keymap.set("n", "ss", "<c-w>v")
+vim.keymap.set("n", "sv", "<c-w>s<c-w>j")
+vim.keymap.set("n", "ss", "<c-w>v<c-w>l")
 vim.keymap.set("n", "sc", "<c-w>q")
 vim.keymap.set("n", "sj", "<c-w>j")
 vim.keymap.set("n", "sk", "<c-w>k")
