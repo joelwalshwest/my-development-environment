@@ -55,6 +55,21 @@ require("formatter").setup {
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
+vim.keymap.set("n", "<leader>F", ":FormatWriteLock<CR>")
+vim.keymap.set(
+    "n",
+    "<leader>I",
+    function()
+        local ft = vim.bo.filetype
+        if ft == "typescript" or ft == "typescriptreact" then
+            vim.cmd("OrganizeImports")
+        end
+        if ft == "python" then
+            vim.cmd("PyrightOrganizeImports")
+        end
+    end
+)
+
 vim.api.nvim_create_autocmd(
     "BufWritePost",
     {
