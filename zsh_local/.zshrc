@@ -119,6 +119,7 @@ alias rr="scripts/run.sh"
 alias tt="scripts/test.sh"
 alias ee="scripts/enter.sh"
 alias dd="scripts/dev.sh"
+alias ff="scripts/format.sh"
 
 alias gg="lazygit"
 alias kk="lazydocker"

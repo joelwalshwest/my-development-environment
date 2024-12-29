@@ -2,6 +2,7 @@ alias ss="scripts/start.sh"
 alias tt="scripts/test.sh"
 alias gg="lazygit"
 alias nn="nvim"
+alias ff="scripts/format.sh"
 alias XX="tmux kill-server"
 alias gs="git status"
 
