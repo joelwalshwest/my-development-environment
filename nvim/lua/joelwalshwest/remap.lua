@@ -20,7 +20,18 @@ vim.keymap.set("n", "}", "]mzz")
 vim.keymap.set("n", "<leader>h", ":set hls!<CR>")
 vim.keymap.set("c", "<c-j>", "<c-g>")
 vim.keymap.set("c", "<c-k>", "<c-t>")
-vim.keymap.set("n", "*", "``/<up><c-t>")
+vim.keymap.set(
+    "n",
+    "*",
+    function()
+        local word = vim.fn.expand("<cword>")
+        if word ~= "" then
+            vim.opt.hlsearch = true
+            vim.api.nvim_feedkeys("/" .. word, "n", false)
+        end
+    end,
+    {desc = "Search for word under cursor"}
+)
 
 -- saving
 vim.keymap.set("n", "<leader>w", ":w<CR>")
