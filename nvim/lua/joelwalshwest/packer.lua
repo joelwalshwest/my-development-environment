@@ -26,7 +26,7 @@ return require("packer").startup(
                             "*.heex",
                             "*.astro"
                         }, -- The file patterns to watch and sort.
-                        trim_spaces = true
+                        trim_spaces = false
                     }
                 )
             end,
