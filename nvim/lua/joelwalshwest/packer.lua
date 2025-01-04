@@ -194,6 +194,14 @@ return require("packer").startup(
             requires = "kevinhwang91/promise-async"
         }
 
+        -- mini.ai
+        use {
+            "echasnovski/mini.ai",
+            config = function()
+                require("mini.ai").setup({})
+            end
+        }
+
         -- ChatGPT
         use(
             {
