@@ -117,6 +117,7 @@ vim.api.nvim_set_keymap("n", "<c-k>", ":BF<CR>", {noremap = true, silent = true}
 vim.api.nvim_set_keymap("n", "<c-j>", ":BB<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<c-x>", ":BD<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>h", ":set invhlsearch<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>S", ":so %<CR>", {noremap = true, silent = true})
 
 -- Exiting
 vim.api.nvim_set_keymap("n", "<leader>q", ":wqa!<CR>", {noremap = true, silent = true})
