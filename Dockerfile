@@ -50,7 +50,7 @@ COPY ./tmux/tmux.conf /root/.tmux.conf
 COPY ./p10k/.p10k.zsh /root/.p10k.zsh
 
 RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-RUN nvim --headless -c 'TSUpdateSync' -c 'sleep 5' -c 'qa'
+RUN nvim --headless -c 'TSUpdateSync' -c 'sleep 10' -c 'qa'
 
 WORKDIR /root/
 

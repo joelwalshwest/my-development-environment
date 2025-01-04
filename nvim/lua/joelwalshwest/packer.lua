@@ -136,6 +136,18 @@ return require("packer").startup(
             }
         )
 
+        -- nvim-treesitter-textobjects
+        use(
+            {
+                "nvim-treesitter/nvim-treesitter-textobjects",
+                after = "nvim-treesitter",
+                requires = "nvim-treesitter/nvim-treesitter",
+                config = function()
+                    require "nvim-treesitter.configs".setup {}
+                end
+            }
+        )
+
         -- harpoon
         use("theprimeagen/harpoon")
 
