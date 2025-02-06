@@ -156,3 +156,20 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/projects/my-development-environment/p10k/.p10k.zsh.
 [[ ! -f ~/projects/my-development-environment/p10k/.p10k.zsh ]] || source ~/projects/my-development-environment/p10k/.p10k.zsh
+
+eval "$(zoxide init zsh)"
+
+function tmux_sesh() {
+  sesh connect $( \
+    sesh list --icons -t -c | fzf --height 40% --layout reverse \
+        --no-sort --ansi --border-label ' sesh ' --prompt '⚡  ' \
+        --bind 'ctrl-x:execute(tmux kill-session -t {2..})+change-prompt(⚡  )+reload(sesh list --icons -t -c)' \
+        --preview-window 'right:55%' \
+        --preview 'sesh preview {}' \
+  )
+}
+
+zle -N tmux_sesh{,}
+bindkey '^z' tmux_sesh
+
+alias zz="tmux_sesh"

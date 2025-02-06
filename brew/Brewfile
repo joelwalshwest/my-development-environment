@@ -1,15 +1,27 @@
 tap "homebrew/bundle"
+brew "bash"
+brew "bat"
+brew "black"
 brew "fzf"
 brew "git"
 brew "lazydocker"
 brew "lazygit"
+brew "mactop"
 brew "mas"
 brew "neovim"
 brew "node"
 brew "powerlevel10k"
+brew "ripgrep"
+brew "sesh"
+brew "tmux"
+brew "tpm"
+brew "zoxide"
 cask "1password"
 cask "1password-cli"
+cask "discord"
+cask "figma"
 cask "font-sauce-code-pro-nerd-font"
+cask "ghostty"
 cask "google-chrome"
 cask "google-cloud-sdk"
 cask "iterm2"
@@ -20,6 +32,11 @@ mas "Bear", id: 1091189122
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
+mas "Mockup", id: 1527554407
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Things", id: 904280696
+mas "Xcode", id: 497799835
+vscode "bradlc.vscode-tailwindcss"
+vscode "foxundermoon.shell-format"
+vscode "vscodevim.vim"
