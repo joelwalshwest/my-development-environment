@@ -7,6 +7,31 @@ return require("packer").startup(
         -- vim-autoreload
         use "djoshea/vim-autoread"
 
+        -- avante
+        use {
+            "yetone/avante.nvim",
+            build = "make BUILD_FROM_SOURCE=true",
+            lazy = false,
+            version = false,
+            opts = {
+                provider = "openai"
+            },
+            BUILD_FROM_SOURCE = true,
+            config = function()
+                require("avante_lib").load()
+                require("avante").setup()
+            end,
+            requires = {
+                "nvim-treesitter/nvim-treesitter",
+                "stevearc/dressing.nvim",
+                "nvim-lua/plenary.nvim",
+                "MunifTanjim/nui.nvim",
+                --- The below dependencies are optional,
+                "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+                "HakonHarnes/img-clip.nvim"
+            }
+        }
+
         -- tailwind-sorter
         use {
             "laytan/tailwind-sorter.nvim",

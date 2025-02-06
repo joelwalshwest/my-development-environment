@@ -52,6 +52,8 @@ COPY ./p10k/.p10k.zsh /root/.p10k.zsh
 RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 RUN nvim --headless -c 'TSUpdateSync' -c 'sleep 10' -c 'qa'
 
+RUN cd ~/.local/share/nvim/site/pack/packer/start/avante.nvim && make
+
 WORKDIR /root/
 
 RUN tmux start-server && \
