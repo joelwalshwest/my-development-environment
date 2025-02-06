@@ -13,13 +13,12 @@ return require("packer").startup(
             build = "make BUILD_FROM_SOURCE=true",
             lazy = false,
             version = false,
-            opts = {
-                provider = "openai"
-            },
             BUILD_FROM_SOURCE = true,
             config = function()
                 require("avante_lib").load()
-                require("avante").setup()
+                require("avante").setup({
+                    provider = "openai"
+                })
             end,
             requires = {
                 "nvim-treesitter/nvim-treesitter",
