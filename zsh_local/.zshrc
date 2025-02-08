@@ -160,13 +160,19 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 eval "$(zoxide init zsh)"
 
 function tmux_sesh() {
-  sesh connect $( \
-    sesh list --icons -t -c | fzf --height 40% --layout reverse \
-        --no-sort --ansi --border-label ' sesh ' --prompt '⚡  ' \
-        --bind 'ctrl-x:execute(tmux kill-session -t {2..})+change-prompt(⚡  )+reload(sesh list --icons -t -c)' \
-        --preview-window 'right:55%' \
-        --preview 'sesh preview {}' \
-  )
+    exec </dev/tty
+    exec <&1
+    local session
+    session=$( \
+      sesh list --icons -t -c | fzf --height 40% --layout reverse \
+          --no-sort --ansi --border-label ' sesh ' --prompt '⚡  ' \
+          --bind 'ctrl-x:execute(tmux kill-session -t {2..})+change-prompt(⚡  )+reload(sesh list --icons -t -c)' \
+          --preview-window 'right:55%' \
+          --preview 'sesh preview {}' \
+    )
+    zle reset-prompt > /dev/null 2>&1 || true
+    [[ -z "$session" ]] && return
+    sesh connect $session
 }
 
 zle -N tmux_sesh{,}
