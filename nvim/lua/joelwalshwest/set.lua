@@ -29,3 +29,19 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
+
+-- Trigger `autoread` when files change on disk
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+    callback = function()
+        if not vim.fn.mode():match("[cr!?t]") and vim.fn.getcmdwintype() == "" then
+            vim.cmd("checktime")
+        end
+    end,
+})
+
+-- Notification after file change
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+    callback = function()
+        vim.api.nvim_echo({ { "File changed on disk. Buffer reloaded.", "WarningMsg" } }, false, {})
+    end,
+})
