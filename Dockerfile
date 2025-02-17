@@ -1,36 +1,38 @@
-# FROM anatolelucet/neovim:stable
-
-FROM alpine:latest
+FROM ubuntu:latest
 
 # Install required packages
-RUN apk add --no-cache --update \
+RUN apt-get update && apt-get install -y \
+        software-properties-common \
         zsh \
-        lazygit \
         npm \
         git \
         nodejs \
         neovim \
         ripgrep \
-        build-base \
         wget \
         python3 \
-        py3-pip \
+        python3-venv \
         fzf \
-        go \
+        golang \
         gopls \
         delve \
-        fd \
+        fd-find \
+        unzip \
         tmux \
         curl \
         bash \
-        jq
+        jq 
+        
+RUN add-apt-repository ppa:neovim-ppa/unstable 
+RUN apt-get update && apt-get install -y \
+        neovim
 
 RUN wget -P /root/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/SourceCodePro.zip \
         && cd /root/.local/share/fonts \
         && unzip SourceCodePro.zip \
         && rm SourceCodePro.zip 
 
-RUN python -m venv /my-venv
+RUN python3 -m venv /my-venv
 RUN /my-venv/bin/pip install --no-cache-dir debugpy black 
 ENV PATH="/my-venv/bin:$PATH"
 
