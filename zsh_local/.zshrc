@@ -124,6 +124,7 @@ alias ff="scripts/format.sh"
 alias gg="lazygit"
 alias kk="lazydocker"
 alias gs="git status"
+alias yy="yazi"
 
 launch_nvim() {
   export OPENAI_API_KEY=$(op read op://Private/OpenAI-API-Key/key)
@@ -179,3 +180,19 @@ zle -N tmux_sesh{,}
 bindkey '^z' tmux_sesh
 
 alias zz="tmux_sesh"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
