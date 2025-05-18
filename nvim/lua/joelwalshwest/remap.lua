@@ -59,8 +59,8 @@ vim.keymap.set("n", "sH", "<c-w>H")
 -- resizing
 vim.keymap.set("n", "<c-w>", ":vertical resize +5<CR>")
 vim.keymap.set("n", "<c-g>", ":vertical resize -5<CR>")
-vim.keymap.set("n", "<c-t>", ":horizontal resize +5<CR>")
-vim.keymap.set("n", "<c-s>", ":horizontal resize -5<CR>")
+vim.keymap.set("n", "<c-b>", ":horizontal resize +5<CR>")
+vim.keymap.set("n", "<c-m>", ":horizontal resize -5<CR>")
 
 -- Function to switch to the next buffer without looping
 local function next_buffer()
