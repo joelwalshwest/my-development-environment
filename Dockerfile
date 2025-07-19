@@ -21,19 +21,28 @@ RUN apt-get update && apt-get install -y \
         tmux \
         curl \
         bash \
-        jq 
-        
-RUN add-apt-repository ppa:neovim-ppa/unstable 
+        jq \
+        xz-utils \
+        zip \
+        libglu1-mesa \
+        neovim \
+        clang \
+        cmake \
+        ninja-build \
+        libgtk-3-dev \
+        mesa-utils
+
+RUN add-apt-repository ppa:neovim-ppa/unstable
 RUN apt-get update && apt-get install -y \
         neovim
 
 RUN wget -P /root/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/SourceCodePro.zip \
         && cd /root/.local/share/fonts \
         && unzip SourceCodePro.zip \
-        && rm SourceCodePro.zip 
+        && rm SourceCodePro.zip
 
 RUN python3 -m venv /my-venv
-RUN /my-venv/bin/pip install --no-cache-dir debugpy black 
+RUN /my-venv/bin/pip install --no-cache-dir debugpy black
 ENV PATH="/my-venv/bin:$PATH"
 
 RUN  git config --global user.email "joelwalshwest@gmail.com"
@@ -52,9 +61,20 @@ COPY ./tmux/tmux.conf /root/.tmux.conf
 COPY ./p10k/.p10k.zsh /root/.p10k.zsh
 
 RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+
+RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
 RUN cd ~/.local/share/nvim/site/pack/packer/start/avante.nvim && make
 
 RUN nvim --headless -c 'TSUpdateSync' -c 'sleep 10' -c 'qa'
+
+# Flutter
+ENV FLUTTER_VERSION=3.32.7
+ENV FLUTTER_HOME=/home/dev/development/flutter
+ENV PATH="${FLUTTER_HOME}/bin:${PATH}"
+RUN git clone https://github.com/flutter/flutter.git -b stable /opt/flutter
+ENV PATH="/opt/flutter/bin:$PATH"
+RUN flutter doctor
 
 WORKDIR /root/
 
@@ -65,4 +85,4 @@ RUN tmux start-server && \
         tmux kill-server
 
 EXPOSE 8080
-CMD ["tmux", "-u"]
+CMD ["zsh"]
