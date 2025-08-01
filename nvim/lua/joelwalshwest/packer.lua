@@ -7,6 +7,30 @@ return require("packer").startup(
         -- vim-autoreload
         use "djoshea/vim-autoread"
 
+        use {
+            "nvim-flutter/flutter-tools.nvim",
+            requires = {
+                "nvim-lua/plenary.nvim",
+                "stevearc/dressing.nvim" -- optional for vim.ui.select
+            },
+            config = function()
+                require("flutter-tools").setup {
+                    debugger = {
+                        -- integrate with nvim dap + install dart code debugger
+                        enabled = true,
+                    },
+                }
+            end
+        }
+
+        use {
+            "nvim-flutter/flutter-tools.nvim",
+            requires = {
+                "nvim-lua/plenary.nvim",
+                "stevearc/dressing.nvim" -- optional for vim.ui.select
+            }
+        }
+
         -- avante
         use {
             "yetone/avante.nvim",
@@ -16,9 +40,11 @@ return require("packer").startup(
             BUILD_FROM_SOURCE = true,
             config = function()
                 require("avante_lib").load()
-                require("avante").setup({
-                    provider = "openai"
-                })
+                require("avante").setup(
+                    {
+                        provider = "openai"
+                    }
+                )
             end,
             requires = {
                 "nvim-treesitter/nvim-treesitter",
