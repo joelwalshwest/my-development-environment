@@ -82,3 +82,7 @@ local set_namespace = vim.api.nvim__set_hl_ns or vim.api.nvim_set_hl_ns
 local namespace = vim.api.nvim_create_namespace("dap-hlng")
 vim.api.nvim_set_hl(namespace, "DapBreakpoint", {fg = "#E51500", bg = "#1E1E2F"})
 vim.fn.sign_define("DapBreakpoint", {text = "⚫︎", texthl = "DapBreakpoint", linehl = "", numhl = ""})
+vim.fn.sign_define("DapBreakpointCondition", {text = "⚫︎", texthl = "", linehl = "", numhl = ""})
+vim.fn.sign_define("DapBreakpointRejected", {text = "", texthl = "", linehl = "", numhl = ""})
+vim.fn.sign_define("DapBreakpointResolved", {text = "⚫︎", texthl = "", linehl = "", numhl = ""})
+vim.fn.sign_define("DapLogPoint", {text = "⚫︎", texthl = "", linehl = "", numhl = ""})

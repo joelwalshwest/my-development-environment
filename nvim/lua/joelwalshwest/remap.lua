@@ -136,3 +136,11 @@ vim.api.nvim_set_keymap("n", "mx", "mX", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "gx", "`X", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "mz", "mZ", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "gz", "`Z", {noremap = true, silent = true})
+
+--flutter
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>t",
+    ":lua require('telescope').extensions.flutter.commands()<CR>",
+    {noremap = true, silent = true}
+)
